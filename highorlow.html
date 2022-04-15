@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n,i,un;
+    int count=0;
+    unsigned int s;
+    cin>>s;
+
+    srand(s);
+
+    n=rand();
+    cout<<"n is :"<<n<<endl;
+    cout<<"choose a number: "<< endl;
+    cin>>un;
+    for(i=0;i<5;i=i+1)
+    {
+        if(un>n)
+        {
+            cout<<"\nYour guess is higher than right number,Turns left:"<<5-i<<endl;
+
+            cout<<"\nTry again,entering a number lower than previous:"<<un<<endl;
+            cin>>un;
+
+
+        }
+        else if(un<n)
+        {
+            cout<<"\nYour guess is lower than right number,Turns left:"<<5-i<<endl;
+            cout<<"\nTry again,entering a number higher than previous:"<<un<<endl;
+            cin>>un;
+
+        }
+        else if(un==n)
+        {
+            cout<<"player won"<<endl;
+            count=count+1;
+            break;
+        }
+    }
+    if(count==0)
+    {
+        cout<<"computer won"<< endl;
+    }
+
+
+
+
+
+    return 0;
+}
+
